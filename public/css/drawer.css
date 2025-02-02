@@ -1,0 +1,8 @@
+.header-sidebar-1 {
+    position: absolute;
+    height: 100vh;
+    background-color: antiquewhite;
+    z-index: 99;
+    width: 300px;
+    top: 0px;
+}
