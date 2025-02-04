@@ -6,7 +6,7 @@ import 'react-phone-input-2/lib/style.css'
 import { useState, useEffect } from 'react'
 import { regEx } from '../regEx'
 import axios from 'axios';
-import "@/public/css/heroForm.css";
+// import "@/public/css/heroForm.css";
 
 const HeroForm = () => {
     const [loader, setLoader] = useState(false);
