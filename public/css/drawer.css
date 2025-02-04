@@ -1,8 +1,22 @@
+
+.desktop-menu > ul {
+    margin-bottom: 0px;
+}
+
 .header-sidebar-1 {
-    position: absolute;
+    position: fixed;
     height: 100vh;
-    background-color: antiquewhite;
+    background-color: #ffffff;
     z-index: 99;
     width: 300px;
-    top: 0px;
+    top: 0;
+    box-shadow: 0px 0px 6px #57677e;
+    
+}
+
+.header-sidebar-1 > div > div {
+    border-bottom: 1px solid #e7e4e4;
+    line-height: 40px;
+    /* padding-left: 22px; */
+    padding: 2px 0px 2px 22px;
 }

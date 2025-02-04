@@ -6,6 +6,7 @@ import 'react-phone-input-2/lib/style.css'
 import { useState, useEffect } from 'react'
 import { regEx } from '../regEx'
 import axios from 'axios';
+import "@/public/css/heroForm.css";
 
 const HeroForm = () => {
     const [loader, setLoader] = useState(false);
@@ -112,7 +113,7 @@ const HeroForm = () => {
         >
             <div className="row">
 
-                <div className="col-md-12">
+                <div className="col-md-6">
                     <input
                         type="text"
                         name="name"
@@ -129,6 +130,26 @@ const HeroForm = () => {
                         placeholder="Enter full name"
                         required
                         className="form-control"
+                    />
+                </div>
+
+                <div className="col-md-6">
+                   
+                    <PhoneInput
+                        country={"in"}
+                        placeholder="Enter your phone number"
+                        value={data.phone}
+                        //inputclassName="w-auto"
+                        inputProps={{
+                            className: "form-control w-100",
+                        }}
+                        onChange={(value) => {
+                            setCheck(true);
+                            setData({
+                                ...data,
+                                phone: value,
+                            });
+                        }}
                     />
                 </div>
 
@@ -154,28 +175,12 @@ const HeroForm = () => {
                     />
                 </div>
 
-                <div className="col-md-12">
-                    {/* <input type="tel"  /> */}
-                    <PhoneInput
-                        country={"us"}
-                        placeholder="Enter your phone number"
-                        value={data.phone}
-                        //className="w-100"
-                        inputclassName="w-100"
-                        onChange={(value) => {
-                            setCheck(true);
-                            setData({
-                                ...data,
-                                phone: value,
-                            });
-                        }}
-                    />
-                </div>
+                
 
                 <div className="col-md-12">
                     <div className="des-attachment">
                         <textarea
-                            rows="4"
+                            rows="3"
                             cols="3"
                             name="message"
                             value={data.message}

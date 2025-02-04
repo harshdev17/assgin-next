@@ -1,6 +1,7 @@
 "use client"
 import React, { useState } from 'react'
 import "@/public/css/drawer.css"
+import Link from 'next/link';
 
 const Header = () => {
     const [openDrwer, setOpenDrwer] = useState(false);
@@ -22,21 +23,21 @@ const Header = () => {
 
 
     const assignmentServices = [
-        { name: "Cheap Assignment Help" },
-        { name: "High School Assignment" },
-        { name: "College Assignment Help" },
-        { name: "Assignment Proofreading Services" },
-        { name: "Custom Assignment" },
-        { name: "English Assignment Help UK" },
-        { name: "Pay Someone To Do My Assignment" },
-        { name: "Last Minute Assignment" },
-        { name: "Custom Writing Service" },
-        { name: "Education Assignment Help UK" },
-        { name: "Edexcel Assignment" },
-        { name: "Assessment Help" },
-        { name: "CTH Assignment" },
-        { name: "Academic Writing Services" },
-        { name: "Buy Assignment Online" }
+        { name: "Cheap Assignment Help", link: "#" },
+        { name: "High School Assignment", link: "/assignment-services/high-school-assignment" },
+        { name: "College Assignment Help", link: "#"  },
+        { name: "Assignment Proofreading Services", link: "#"  },
+        { name: "Custom Assignment", link: "#"  },
+        { name: "English Assignment Help UK", link: "#"  },
+        { name: "Pay Someone To Do My Assignment", link: "#"  },
+        { name: "Last Minute Assignment", link: "#"  },
+        { name: "Custom Writing Service", link: "#"  },
+        { name: "Education Assignment Help UK", link: "#"  },
+        { name: "Edexcel Assignment", link: "#"  },
+        { name: "Assessment Help", link: "#"  },
+        { name: "CTH Assignment", link: "#"  },
+        { name: "Academic Writing Services", link: "#"  },
+        { name: "Buy Assignment Online", link: "#"  }
     ];
 
     const dissertationServices = [
@@ -109,7 +110,7 @@ const Header = () => {
                                                     <span className="back_menu"><i className="Back"></i> </span>
                                                     <ul>
                                                         {assignmentServices.map((item, index) => (
-                                                            <li key={index}><a href="#">{item.name}</a></li>
+                                                            <li key={index}><Link href={item.link}>{item.name}</Link></li>
                                                         ))}
 
 
@@ -296,7 +297,7 @@ const Header = () => {
                             <div onClick={() => setDrawerLevel3(false)}>Back</div>
                             {drawerLevel3Val === "assignmentServices" &&
                                 assignmentServices.map((item, index) => (
-                                    <div key={index}>{item.name}</div>
+                                    <div key={index}><Link onClick={() => {setDrawerLevel3(false), setDrawerLevel2(false), setOpenDrwer(false)}} href={item.link}>{item.name}</Link></div>
                                 ))}
 
                             {drawerLevel3Val === "dissertationServices" &&
